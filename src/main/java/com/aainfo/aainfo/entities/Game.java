@@ -11,14 +11,17 @@ public class Game {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private Long title;
+    private String title;
     @Column (name="game_year")
     private Integer year;
     private String genre;
-    private String plataform;
+    private String platform;
     private Double score;
     private String imgUrl;
+
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game(){
@@ -37,11 +40,11 @@ public class Game {
         this.id = id;
     }
 
-    public Long getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(Long title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -61,12 +64,12 @@ public class Game {
         this.genre = genre;
     }
 
-    public String getPlataform() {
-        return plataform;
+    public String getPlatform() {
+        return platform;
     }
 
-    public void setPlataform(String plataform) {
-        this.plataform = plataform;
+    public void setPlatform(String platform) {
+        this.platform = platform;
     }
 
     public Double getScore() {
@@ -106,11 +109,11 @@ public class Game {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Game game = (Game) o;
-        return Objects.equals(title, game.title) && Objects.equals(year, game.year) && Objects.equals(genre, game.genre) && Objects.equals(plataform, game.plataform) && Objects.equals(imgUrl, game.imgUrl) && Objects.equals(shortDescription, game.shortDescription) && Objects.equals(longDescription, game.longDescription);
+        return Objects.equals(title, game.title) && Objects.equals(year, game.year) && Objects.equals(genre, game.genre) && Objects.equals(platform, game.platform) && Objects.equals(imgUrl, game.imgUrl) && Objects.equals(shortDescription, game.shortDescription) && Objects.equals(longDescription, game.longDescription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, year, genre, plataform, imgUrl, shortDescription, longDescription);
+        return Objects.hash(title, year, genre, platform, imgUrl, shortDescription, longDescription);
     }
 }
