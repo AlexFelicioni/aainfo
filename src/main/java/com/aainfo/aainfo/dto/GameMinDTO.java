@@ -2,17 +2,10 @@ package com.aainfo.aainfo.dto;
 
 import com.aainfo.aainfo.entities.Game;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
 public class GameMinDTO {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+
     private Long id;
     private String title;
-    @Column (name="game_year")
     private Integer year;
     private String imgUrl;
     private String shortDescription;
